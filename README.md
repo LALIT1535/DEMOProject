@@ -1,30 +1,41 @@
-# Project_For_Nimap
+# DEMOProject
 
 ## Overview
 
 DEMOProject is a sample ASP.NET MVC application designed for managing products and categories. It allows users to:
 
-1- View a list of products with pagination.
-2- Create, edit, and delete products and categories.
-3- View product details and the associated category.
+- View a list of products with pagination.
+- Create, edit, and delete products and categories.
+- View product details and the associated category.
 
-Features
+## Features
 
-1- Product Management: Add, edit, delete, and list products.
-2- Category Management: Add, edit, delete, and list categories.
-3- Pagination: Paginated product listings for better user experience.
-4- Confirmation prompts before deletion.
+- Product Management: Add, edit, delete, and list products.
+- Category Management: Add, edit, delete, and list categories.
+- Pagination: Paginated product listings for better user experience.
+- Confirmation prompts before deletion.
 
-Technologies Used
+## Technologies Used
 
-1- ASP.NET MVC 5
-2- Entity Framework for ORM
-3- SQL Server (or any other database you configure)
-4- HTML, CSS, and JavaScript for the front-end
+- ASP.NET MVC 5
+- Entity Framework for ORM
+- SQL Server (or any other database you configure)
+- HTML, CSS, and JavaScript for the front-end
+
+## Getting Started
+
+To get started with DEMOProject locally, follow the steps below:
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Visual Studio (2019 or later)
+- SQL Server or any database provider you prefer
 
 ### Steps to Run Locally
 
 1. Clone this repository:
 
    ```bash
-   https://github.com/LALIT1535/Project_For_Nimap
+   git clone https://github.com/your-username/DEMOProject.git

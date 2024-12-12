@@ -3,7 +3,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Product</h4>
         <hr />
@@ -36,4 +36,9 @@
 
 <div>
     @Html.ActionLink("Back to List", "Index")
+</div>
+
+<!-- Button to create a new category -->
+<div>
+    <a href="@Url.Action("Create", "Category")" class="btn btn-primary">Create New Category</a>
 </div>

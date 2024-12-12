@@ -36,25 +36,34 @@ namespace DEMOProject.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-
-            ViewBag.CategoryId = new SelectList(_context.Categories, "CategoryId", "CategoryName");
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(Product product)
+        public ActionResult Create(Product product, string categoryName)
         {
             if (ModelState.IsValid)
             {
+                // Check if the category exists based on the entered category name
+                var category = _context.Categories.FirstOrDefault(c => c.CategoryName == categoryName);
+
+                if (category == null)
+                {
+                    ModelState.AddModelError("CategoryName", "Invalid Category Name. Please enter a valid category.");
+                    return View(product);
+                }
+
+                // Assign the CategoryId from the found category
+                product.CategoryId = category.CategoryId;
+
                 _context.Products.Add(product);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-  
-            ViewBag.CategoryId = new SelectList(_context.Categories, "CategoryId", "CategoryName", product.CategoryId);
             return View(product);
         }
+
 
         [HttpGet]
         public ActionResult Edit(int id)
@@ -101,16 +110,16 @@ namespace DEMOProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var product = _context.Products.Find(id); 
+            var product = _context.Products.Find(id);
             if (product == null)
             {
-                return HttpNotFound(); 
+                return HttpNotFound();
             }
 
-            _context.Products.Remove(product); 
-            _context.SaveChanges(); 
+            _context.Products.Remove(product);
+            _context.SaveChanges();
 
-            return RedirectToAction("Index"); 
+            return RedirectToAction("Index");
         }
 
 
